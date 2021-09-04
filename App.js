@@ -1,12 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button, TextInput, FlatList } from 'react-native';
+import CarItem from './components/carItem/CarItem';
 
 export default function App() {
+
+  const renderItem = ({ item }) => (<View key={item.id}><Text>{item.value}</Text></View>);
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <CarItem
+      backgroundSource={require('./assets/t1.jpg')}
+      mainActionButtonText='Custom Order'
+      subActionButtonText='Existing inventory'
+      subTitleText="Starting at $73,320"
+      titleText="Model S"
+      />
     </View>
   );
 }
@@ -14,7 +21,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },

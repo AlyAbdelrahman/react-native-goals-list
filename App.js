@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, Dimensions, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Dimensions, StatusBar, Image } from 'react-native';
 import carsData from './helpers/fake-data';
 import CarItem from './components/carItem/CarItem';
 
@@ -18,6 +18,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Image source={require('./assets/t7.png')} style={styles.logo}/>
       <FlatList
         data={carsData}
         keyExtractor={(Element, index) => Element.titleText}
@@ -40,4 +41,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  logo: {
+    position: 'absolute',
+    top: 0,
+    left: 1,
+    zIndex: 999,
+    height: 50,
+    width:140
+  }
 });

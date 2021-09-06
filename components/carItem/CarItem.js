@@ -11,8 +11,8 @@ const CarItem = ({ backgroundSource, titleText, subTitleText, mainActionButtonTe
                 <Text style={{...styles.headerText,...styles.subText}}>{subTitleText}</Text>
             </View>
             <View style={styles.actionButtonsContainer}>
-                <StyledButton buttonText={mainActionButtonText} type="main"/>
                 <StyledButton buttonText={subActionButtonText} type="sub"/>
+                <StyledButton buttonText={mainActionButtonText} type="main"/>
             </View>
         </View>
     )
